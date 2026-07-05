@@ -37,6 +37,27 @@ button:hover {
   border-color: #5b7288;
 }
 
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+input,
+select {
+  border: 1px solid #c8d0d9;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #1f2933;
+  padding: 0.65rem 0.8rem;
+  width: 100%;
+}
+
+input:focus,
+select:focus {
+  border-color: #5b7288;
+  outline: 2px solid #dce6ef;
+}
+
 .app-shell {
   min-height: 100vh;
 }
@@ -119,6 +140,65 @@ button:hover {
   color: #9a3c30;
 }
 
+.form-card {
+  background: #ffffff;
+  border: 1px solid #d9e0e7;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.form-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 2fr) minmax(160px, 1fr);
+}
+
+.form-grid label {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.form-grid span {
+  color: #52616f;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.transaction-form-grid {
+  grid-template-columns: minmax(180px, 1fr) minmax(220px, 2fr) minmax(140px, 1fr) minmax(150px, 1fr);
+}
+
+.helper-text {
+  color: #5f6f7e;
+  font-size: 0.9rem;
+  margin: 0.85rem 0 0;
+}
+
+.message {
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  padding: 0.85rem 1rem;
+}
+
+.message.success {
+  background: #eff8f1;
+  border: 1px solid #aed8b8;
+  color: #24613a;
+}
+
+.message.error {
+  background: #fff4f2;
+  border: 1px solid #e6b5ae;
+  color: #9a3c30;
+}
+
 .table-card {
   background: #ffffff;
   border: 1px solid #d9e0e7;
@@ -147,12 +227,47 @@ th {
   font-weight: 700;
 }
 
+tfoot td {
+  background: #f8fafc;
+  font-weight: 700;
+}
+
 tr:last-child td {
   border-bottom: 0;
 }
 
 .numeric {
   text-align: right;
+}
+
+.balance-cell {
+  font-weight: 700;
+}
+
+.balance-positive {
+  color: #24613a;
+}
+
+.balance-negative {
+  color: #9a3c30;
+}
+
+.balance-zero {
+  color: #5f6f7e;
+}
+
+.actions-column {
+  text-align: right;
+  width: 130px;
+}
+
+.danger-button {
+  border-color: #e2b8b1;
+  color: #9a3c30;
+}
+
+.danger-button:hover {
+  border-color: #c36c5d;
 }
 
 .summary-grid {
@@ -190,6 +305,10 @@ tr:last-child td {
   }
 
   .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
     grid-template-columns: 1fr;
   }
 }
